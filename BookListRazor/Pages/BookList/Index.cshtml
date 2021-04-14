@@ -3,11 +3,14 @@
 
 <br />
 <div class="container row p-0 m-0">
-    <div class="col-9">
+    <div class="col-6">
         <h2 class="text-info">Book List</h2>
     </div>
     <div class="col-3">
         <a asp-page="Create" class="btn btn-info form-control text-white">Create New Book</a>
+    </div>
+    <div class="col-3">
+        <a asp-page="Upsert" class="btn btn-info form-control text-white">Add(Upsert) New Book</a>
     </div>
 
     <div class="col-12 border p-3 mt-3">
@@ -56,4 +59,30 @@
             }
         </form>
     </div>
+
+    <div class=" col-12" style="text-align:center">
+        <br />
+        <span class="h3 text-info ">OR</span>
+        <br /><br />
+    </div>
+
+    <div class="col-12 border p-3">
+        <table id="DT_load" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>ISBN</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 </div>
+
+@*bu datatale id bu şekilde olması önemli
+    js kullanarak bu datatable ı load edicez bu nedenle de section scripts olarak yeni bir js yazıp  eklicez buraya
+        bu css ve js yolu wwwroot içinde   *@
+@section Scripts{
+    <script src="~/js/bookList.js"></script>
+}
